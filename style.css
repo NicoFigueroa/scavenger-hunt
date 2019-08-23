@@ -1,3 +1,42 @@
+p.timer {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.timer {
+  text-align: center;
+  font-size: 100px;
+  padding-top: 15px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+div.header {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  float: none;
+}
+
+div.words {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
 h1 {
-  color: green;
+  text-align: center;
+  display: inline;
+}
+
+p.words {
+  display: inline-block;
+  font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+
 }

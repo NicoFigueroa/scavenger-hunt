@@ -1,18 +1,29 @@
 <html>
 <head>
   <link href="style.css" rel="stylesheet">
+
 </head>
 <body>
+  <div class="header">
+    <h1 class="berry">🍓</h1>
+    <h1>Anniversary Countdown! </h1>
+    <h1 class="berry">🍓</h1>
+  </div>
 
-  <h1>Countdown to Anniversary!</h1>
-  <p id="time"></p>
+  <div class="container">
+    <div class="timer" id="timer">
+      <p id="days" class="timer "></p>
+      :
+      <p id="hours" class="timer "></p>
+      :
+      <p id="minutes" class="timer "></p>
+      :
+      <p id="seconds" class="timer "></p>
+    </div>
+  </div>
 
 </body>
-<script>
-  var timeTag = document.getElementById("time")
-  timeTag.innerHTML = "HELLO"
-</script>
 
-
+<script type="text/javascript" src="script.js"></script>
 
 </html>
