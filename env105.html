@@ -1,0 +1,57 @@
+<html>
+  <head>
+      <title>ENV 105 Study Guide</title>
+
+      <link href="style/env.css" rel="stylesheet">
+
+      <script>
+
+        //TEST Section
+        var test = function() {
+          console.log("test")
+        }
+
+        var assessmentToggle = function(assessment) {
+          var table = document.getElementsByClassName("assessment" + assessment)[0]
+          table.classList.toggle("hide")
+        }
+
+        var quizCollection = {}
+        //var quizzes = [2,3,4,5,6,7,8,9,10,11,13,15]
+        var quizzes = [[2,3,4],[5,6,7,8], [9,10,11],[13,15, 16]]
+
+        var loadQuizzes = function(quizList) {
+          for (var i = 0; i < quizList.length; i++) {
+            var quizId = quizzes[i]
+            var script = document.createElement('script');
+            script.src = "quizzes/chapter" + quizId.toString() +".js";
+            document.head.appendChild(script)
+          }
+        }
+
+      </script>
+
+      <div id="quizzes">
+
+      </div>
+  </head>
+
+  <body>
+    <h1 class="header">ENV 105 Study Help</h1>
+    <div id="quizContainer">
+      <table>
+        <tbody id="quizList">
+        <tr>
+          <td>
+            <input onclick="genTest()" type="button" value="Generate Test" />
+          </td>
+          <td>
+            <input onclick="genKey()" type="button" value="Generate Answer Key"
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src=env.js></script>
+</html>

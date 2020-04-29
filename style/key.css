@@ -1,0 +1,17 @@
+td {
+  border-style: solid;
+  border-width: thin;
+}
+
+h2 {
+  text-align: center;
+
+}
+
+.even {
+  background-color: #72c1d5;
+}
+
+.odd {
+  background-color: #fe9b1d;
+}
