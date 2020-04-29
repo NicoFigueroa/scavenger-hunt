@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Answer Key</title>
+    <script>
+      var debug = false
+
+      var loc = window.location.toString()
+      var quizzes = loc.substring(loc.lastIndexOf("?") + 1, loc.lastIndexOf("&")).split("&")
+
+      var quizCollection = {}
+
+      var loadQuizzes = function(quizList) {
+
+        for (var i = 0; i < quizList.length; i++) {
+
+          var quizId = quizList[i]
+
+          var script = document.createElement('script');
+          script.src = "quizzes/chapter" + quizId.toString() +".js";
+          document.head.appendChild(script)
+        }
+      }
+
+      loadQuizzes(quizzes)
+
+
+
+    </script>
+    <script src="key.js"></script>
+    <link href="style/key.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+      <a href="env105.html">Home</a>
+      <div class="answerKey">
+        <table>
+          <tbody id="answerKey">
+            </tbody>
+          </table>
+        </div>
+      </body>
+
+      <script>
+      </script>
+</html>
