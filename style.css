@@ -1,7 +1,13 @@
 div {
 text-align: center;
+margin-top: 50%;
 }
+
 
 .hide {
 display: none;
+}
+
+html {
+	font-size: 30px;
 }
