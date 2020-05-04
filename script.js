@@ -41,7 +41,15 @@ var showRelevantClue = function() {
 	}
 
 	currentClue = clueNumber
-	console.log("Showing clue: " + currentClue)
+
+	switch (clueNumber) {
+		case "427906":
+			setTimeout(function() {
+				document.getElementById("aptest").classList.add("hide")
+				document.getElementById("psych").classList.remove("hide")
+			}, 15000)
+	}
+
 
 	var clueDiv = document.getElementById(clueNumber)
 	if (clueDiv) {
