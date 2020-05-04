@@ -2,7 +2,8 @@ var startColor = [218,245,244]
 var endColor = [255,79,0]
 
 var currentClue = null
-var scavengerTime = new Date(2020, 4, 3, 17, 20)
+var scavengerTime = new Date(Date.now() - 5000)
+//var scavengerTime = new Date(2020, 4, 5, 17)
 
 var calculateCurrentColor = function() {
 	var clues = document.getElementsByTagName("div").length
@@ -19,22 +20,25 @@ var calculateCurrentColor = function() {
 		}
 	}
 
-	console.log(currentColor)
-
 	return currentColor
 }
 
 var initialize = function() {
 	//var color = calculateCurrentColor()
 	var randomColor = (currentClue * 10) + 120
-	console.log(randomColor)
 	document.body.style = "background-color: hsl(" + randomColor + ", 50%, 50%);"
 }
 
 var showRelevantClue = function() {
 	var loc = window.location.toString()
 	var clue = loc.substring(loc.lastIndexOf("?"))
-	var clueNumber = clue.match(/=.*/).toString().replace("=", "")
+	var clueNumber = clue.match(/=.*/)
+
+	if (!clueNumber) {
+		window.location = "index.html?=104568"
+	} else {
+		clueNumber = clueNumber.toString().replace("=", "")
+	}
 
 	currentClue = clueNumber
 	console.log("Showing clue: " + currentClue)
@@ -42,7 +46,7 @@ var showRelevantClue = function() {
 	var clueDiv = document.getElementById(clueNumber)
 	if (clueDiv) {
 		clueDiv.classList.toggle("hide")
-
+	} else {
 	}
 }
 
@@ -71,6 +75,7 @@ var updateCountdownTimer = function() {
 
 	if (isScavengerTime()) {
 		document.getElementById("countdown").classList.add("hide")
+		document.getElementById("104568").classList.remove("hide")
 	} else {
 		var remaining = timeUntilScavenger()
 
