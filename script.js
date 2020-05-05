@@ -2,8 +2,9 @@ var startColor = [218,245,244]
 var endColor = [255,79,0]
 
 var currentClue = null
-//var scavengerTime = new Date(Date.now() - 5000)
-var scavengerTime = new Date(2020, 4, 5, 17)
+//var scavengerTime = new Date(Date.now() + 5000)
+var scavengerTime = new Date(2020, 4, 4, 20, 37, 40)
+//var scavengerTime = new Date(2020, 4, 5, 17)
 
 var calculateCurrentColor = function() {
 	var clues = document.getElementsByTagName("div").length
@@ -35,7 +36,7 @@ var showRelevantClue = function() {
 	var clueNumber = clue.match(/=.*/)
 
 	if (!clueNumber) {
-		window.location = "index.html?=104568"
+		window.location = "index.html?clue=897341"
 	} else {
 		clueNumber = clueNumber.toString().replace("=", "")
 	}
@@ -82,8 +83,9 @@ var timeUntilScavenger = function() {
 var updateCountdownTimer = function() {
 
 	if (isScavengerTime()) {
-		document.getElementById("countdown").classList.add("hide")
-		document.getElementById("104568").classList.remove("hide")
+		//document.getElementById("countdown").classList.add("hide")
+		//document.getElementById("104568").classList.remove("hide")
+		window.location = "index.html?clue=897341"
 	} else {
 		var remaining = timeUntilScavenger()
 
@@ -102,7 +104,6 @@ var isScavengerTime = function() {
 }
 
 window.addEventListener("load", function() {
-
 	if (!isScavengerTime()) {
 		updateCountdownTimer()
 		document.getElementsByTagName("body")[0].classList.add("count")
