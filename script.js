@@ -2,9 +2,9 @@ var startColor = [218,245,244]
 var endColor = [255,79,0]
 
 var currentClue = null
-var scavengerTime = new Date(Date.now() - 5000)
+//var scavengerTime = new Date(Date.now() - 5000)
 //var scavengerTime = new Date(2020, 4, 4, 20, 37, 40)
-//var scavengerTime = new Date(2020, 4, 5, 17)
+var scavengerTime = new Date(2020, 4, 5, 15, 30)
 
 var calculateCurrentColor = function() {
 	var clues = document.getElementsByTagName("div").length
